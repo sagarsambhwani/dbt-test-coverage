@@ -16,5 +16,4 @@ models:
     columns:
       - name: id
         description: "The primary key for this table"
-        data_tests:
-          - not_null
+        
