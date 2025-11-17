@@ -1,6 +1,7 @@
 # Script: test-coverage.py
 # Description: This script analyzes dbt artifacts (manifest.json and run_results.json)
 import json
+import sys
 
 # 1. Load dbt artifacts
 with open('target/manifest.json') as f:
@@ -8,81 +9,100 @@ with open('target/manifest.json') as f:
 with open('target/run_results.json') as f:
     run_results = json.load(f)
 
-# 2. Build reverse mapping: model -> tests by examining all test nodes
+# 2. Build mapping: model -> tests by examining all test nodes in manifest
 model_tests = {}
-for node_id, node in manifest['nodes'].items():
-    if node['resource_type'] == 'model':
-        model_name = node['name']
+for node_id, node in manifest.get('nodes', {}).items():
+    if node.get('resource_type') == 'model':
+        model_name = node.get('name')
         model_tests[model_name] = []
 
-# Find all tests and map them to their models
-for node_id, node in manifest['nodes'].items():
-    if node['resource_type'] == 'test':
-        # Tests depend on models through depends_on.nodes
+# Map each test node back to the model(s) it depends on
+for node_id, node in manifest.get('nodes', {}).items():
+    if node.get('resource_type') == 'test':
         depends_on = node.get('depends_on', {}).get('nodes', [])
         for dep in depends_on:
-            if dep in manifest['nodes'] and manifest['nodes'][dep]['resource_type'] == 'model':
-                model_name = manifest['nodes'][dep]['name']
+            dep_node = manifest.get('nodes', {}).get(dep)
+            if dep_node and dep_node.get('resource_type') == 'model':
+                model_name = dep_node.get('name')
                 if model_name in model_tests:
                     model_tests[model_name].append(node_id)
 
-# 3. Get test execution details from run_results
-test_results = {result['unique_id']: result for result in run_results['results'] if result['unique_id'].startswith('test.') or result['unique_id'].startswith('data_tests.')}
+# 3. Index run_results by unique_id for lookup
+run_results_map = {r.get('unique_id'): r for r in run_results.get('results', [])}
 
-# 4. Print/validate models without tests or failed tests
+# 4. Analyze test coverage and execution
 passed_tests = []
 failed_tests = []
+not_executed_tests = []
+untested_models = []
 
 for model, tests in model_tests.items():
     if not tests:
-        print(f'Model "{model}" has NO tests.')
+        untested_models.append(model)
     for test_id in tests:
-        result = test_results.get(test_id)
-        if result:
-            if result['status'] == 'pass':
-                passed_tests.append((model, test_id, result['status']))
-            elif result['status'] != 'pass':
-                failed_tests.append((model, test_id, result['status']))
+        result = run_results_map.get(test_id)
+        if result is None:
+            not_executed_tests.append((model, test_id))
+        else:
+            status = result.get('status')
+            if status == 'pass':
+                passed_tests.append((model, test_id, status))
+            else:
+                failed_tests.append((model, test_id, status))
 
-# Print summary
+# 5. Print a clear summary
 print("\n" + "="*80)
-print("TEST SUMMARY")
+print("TEST COVERAGE REPORT")
 print("="*80)
-print(f"\nTotal Tests: {len(passed_tests) + len(failed_tests)}")
-print(f"✓ Passed: {len(passed_tests)}")
-print(f"✗ Failed: {len(failed_tests)}")
+total_defined_tests = sum(len(t) for t in model_tests.values())
+executed_tests = len(passed_tests) + len(failed_tests)
+print(f"\nDefined tests: {total_defined_tests}")
+print(f"Executed tests: {executed_tests}")
+print(f"  ✓ Passed: {len(passed_tests)}")
+print(f"  ✗ Failed: {len(failed_tests)}")
+print(f"  • Not executed: {len(not_executed_tests)}")
+print(f"Untested models (no tests defined): {len(untested_models)}")
+
+if untested_models:
+    print("\n--- UNTESTED MODELS ---")
+    for m in untested_models:
+        print(f"  - {m}")
+
+if not_executed_tests:
+    print("\n--- TESTS DEFINED BUT NOT EXECUTED ---")
+    for model, test_id in not_executed_tests:
+        print(f"  - {test_id} ({model})")
 
 if passed_tests:
     print("\n--- PASSED TESTS ---")
     for model, test_id, status in passed_tests:
-        test_name = test_id.split('.')[-2]
+        test_name = test_id.split('.')[-2] if '.' in test_id else test_id
         print(f"  ✓ {test_name} ({model})")
 
 if failed_tests:
     print("\n--- FAILED TESTS ---")
     for model, test_id, status in failed_tests:
-        test_name = test_id.split('.')[-2]
-        print(f"  ✗ {test_name} ({model})")
+        test_name = test_id.split('.')[-2] if '.' in test_id else test_id
+        print(f"  ✗ {test_name} ({model}) - status: {status}")
 
 print("\n" + "="*80)
 
-# 5. Optionally: fail script/CI if untested models or failed tests found
-untested_models = [model for model, tests in model_tests.items() if not tests]
+# 6. Enforce CI exit codes
+# Prioritize untested models as a CI-breaking reason per user request.
+if untested_models:
+    print("\nSCRIPT FAILED - Untested models detected.")
+    print("  • Add tests for the listed models (schema.yml -> data_tests or generic tests).")
+    sys.exit(2)  # distinct exit code for untested models
 
-if untested_models or failed_tests:
-    print("\n  SCRIPT FAILED - Issues detected:")
-    if untested_models:
-        print(f"\n  • Untested Models ({len(untested_models)}):")
-        for model in untested_models:
-            print(f"    - {model}")
-    if failed_tests:
-        print(f"\n  • Failed Tests ({len(failed_tests)}):")
-        for model, test_id, status in failed_tests:
-            test_name = test_id.split('.')[-2]
-            print(f"    - {test_name} ({model})")
-    print("\nExiting with error code 1")
-    exit(1)
-else:
-    print("\n✓ SUCCESS - All models are tested and all tests passed!")
-    print("Exiting with success code 0")
-    exit(0)
+if failed_tests:
+    print("\nSCRIPT FAILED - Failing tests detected.")
+    print("  • Fix failing tests or adjust test expectations.")
+    sys.exit(1)
+
+if not_executed_tests:
+    print("\nSCRIPT FAILED - Some tests were defined but not executed.")
+    print("  • Ensure 'dbt test' or 'dbt build' ran and run_results.json corresponds to that run.")
+    sys.exit(3)
+
+print("\n✓ SUCCESS - All defined tests executed and passed for tested models.")
+sys.exit(0)
