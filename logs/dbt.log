@@ -3024,3 +3024,371 @@ where id is null
 [0m15:55:29.057852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F99BECCEC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9DC4C9590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9DC4C8B90>]}
 [0m15:55:29.058432 [debug] [MainThread]: Flushing usage events
 [0m15:55:30.781537 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:00:29.211579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DC369ACF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DC4917D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DC49179D0>]}
+
+
+============================== 16:00:29.218205 | 9122af43-2008-45c3-8228-379b2551ff52 ==============================
+[0m16:00:29.218205 [info ] [MainThread]: Running with dbt=1.10.8
+[0m16:00:29.219330 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\user\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\Users\\user\\Downloads\\DBT\\my_dbt_project\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt build --profiles-dir C:\\Users\\user\\.dbt', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:00:30.702295 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m16:00:30.703015 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m16:00:30.703544 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m16:00:32.005802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DC3D37CE0>]}
+[0m16:00:32.099329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DC6D38F30>]}
+[0m16:00:32.100359 [info ] [MainThread]: Registered adapter: databricks=1.10.8
+[0m16:00:32.766353 [debug] [MainThread]: checksum: 265d66e81f90af29a7a28579c9b54d938c94f4a57c57be5f853267ae509b5fcb, vars: {}, profile: , target: , version: 1.10.8
+[0m16:00:33.719369 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 18 files added, 39 files changed.
+[0m16:00:33.720147 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\components\constraints.sql
+[0m16:00:33.720658 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\table\rename.sql
+[0m16:00:33.721165 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\materializations\clone\clone.sql
+[0m16:00:33.721645 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\config.sql
+[0m16:00:33.722207 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\table\replace.sql
+[0m16:00:33.722688 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\components\column_tags.sql
+[0m16:00:33.723230 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\view\alter.sql
+[0m16:00:33.723740 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\materializations\hooks.sql
+[0m16:00:33.724269 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\components\query.sql
+[0m16:00:33.724775 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\materializations\clone\strategies.sql
+[0m16:00:33.725308 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\components\column_mask.sql
+[0m16:00:33.725816 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\comment.sql
+[0m16:00:33.726342 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\create_backup.sql
+[0m16:00:33.726846 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\view\rename.sql
+[0m16:00:33.727372 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\table\alter.sql
+[0m16:00:33.727877 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\create_intermediate.sql
+[0m16:00:33.728408 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\execute.sql
+[0m16:00:33.728908 [debug] [MainThread]: Partial parsing: added file: dbt_databricks://macros\relations\view\replace.sql
+[0m16:00:33.729754 [debug] [MainThread]: Partial parsing: deleted file: dbt_databricks://macros\materializations\clone.sql
+[0m16:00:33.730356 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\copy_into.sql
+[0m16:00:33.732107 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\materialized_view\drop.sql
+[0m16:00:33.732792 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\streaming_table\drop.sql
+[0m16:00:33.733529 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\etc\statement.sql
+[0m16:00:33.734355 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\metadata.sql
+[0m16:00:33.734879 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\materialized_view.sql
+[0m16:00:33.736525 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\persist_docs.sql
+[0m16:00:33.737039 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\table.sql
+[0m16:00:33.737623 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\databricks_catalog.sql
+[0m16:00:33.738176 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\streaming_table\refresh.sql
+[0m16:00:33.739119 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\materialized_view\create.sql
+[0m16:00:33.739644 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\streaming_table\alter.sql
+[0m16:00:33.740640 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\liquid_clustering.sql
+[0m16:00:33.741321 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\python.sql
+[0m16:00:33.742153 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\columns.sql
+[0m16:00:33.742759 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\optimize.sql
+[0m16:00:33.743419 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\materialized_view\refresh.sql
+[0m16:00:33.744035 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\seeds\seeds.sql
+[0m16:00:33.744946 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\location.sql
+[0m16:00:33.745541 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\file_format.sql
+[0m16:00:33.746098 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\view.sql
+[0m16:00:33.746656 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\incremental\validate.sql
+[0m16:00:33.747137 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\materialized_view\alter.sql
+[0m16:00:33.747712 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\tags.sql
+[0m16:00:33.748181 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\replace.sql
+[0m16:00:33.748668 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\seeds\helpers.sql
+[0m16:00:33.749836 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\tblproperties.sql
+[0m16:00:33.750309 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\streaming_table.sql
+[0m16:00:33.750971 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\relation.sql
+[0m16:00:33.751438 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\snapshot.sql
+[0m16:00:33.752238 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\incremental\strategies.sql
+[0m16:00:33.752706 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\table\create.sql
+[0m16:00:33.753190 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\streaming_table\create.sql
+[0m16:00:33.753824 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\view\drop.sql
+[0m16:00:33.754684 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\table\drop.sql
+[0m16:00:33.755286 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\materializations\incremental\incremental.sql
+[0m16:00:33.755981 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\adapters\catalog.sql
+[0m16:00:33.756608 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\view\create.sql
+[0m16:00:33.757399 [debug] [MainThread]: Partial parsing: updated file: dbt_databricks://macros\relations\constraints.sql
+[0m16:00:35.292638 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DD2205650>]}
+[0m16:00:35.414572 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\manifest.json
+[0m16:00:35.418522 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\semantic_manifest.json
+[0m16:00:35.458982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DD22F3200>]}
+[0m16:00:35.459769 [info ] [MainThread]: Found 2 models, 3 data tests, 686 macros
+[0m16:00:35.463333 [info ] [MainThread]: 
+[0m16:00:35.464222 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:00:35.464999 [info ] [MainThread]: 
+[0m16:00:35.466131 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=master) - Creating connection
+[0m16:00:35.466777 [debug] [MainThread]: Acquiring new databricks connection 'master'
+[0m16:00:35.478863 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=list_workspace) - Creating connection
+[0m16:00:35.480074 [debug] [ThreadPool]: Acquiring new databricks connection 'list_workspace'
+[0m16:00:35.480695 [debug] [ThreadPool]: Using databricks connection "list_workspace"
+[0m16:00:35.481368 [debug] [ThreadPool]: On list_workspace: GetSchemas(database=workspace, schema=None)
+[0m16:00:35.481988 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:00:36.655055 [debug] [ThreadPool]: Databricks adapter: Connection(session-id=01f0c3a0-73ed-114c-8058-4bfda4bee9bd) - Created
+[0m16:00:37.350607 [debug] [ThreadPool]: SQL status: OK in 1.870 seconds
+[0m16:00:37.354417 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f0c3a0-73ed-114c-8058-4bfda4bee9bd, command-id=01f0c3a0-741c-1946-b1ff-763557aba032) - Closing
+[0m16:00:37.355712 [debug] [ThreadPool]: On list_workspace: Close
+[0m16:00:37.356777 [debug] [ThreadPool]: Databricks adapter: Connection(session-id=01f0c3a0-73ed-114c-8058-4bfda4bee9bd) - Closing
+[0m16:00:37.670643 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=list_workspace_default) - Creating connection
+[0m16:00:37.672111 [debug] [ThreadPool]: Acquiring new databricks connection 'list_workspace_default'
+[0m16:00:37.712337 [debug] [ThreadPool]: Using databricks connection "list_workspace_default"
+[0m16:00:37.713124 [debug] [ThreadPool]: On list_workspace_default: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.10.8", "databricks_sql_connector_version": "4.2.0", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_workspace_default"} */
+
+    
+SELECT
+  table_name,
+  if(table_type IN ('EXTERNAL', 'MANAGED', 'MANAGED_SHALLOW_CLONE', 'EXTERNAL_SHALLOW_CLONE'), 'table', lower(table_type)) AS table_type,
+  lower(data_source_format) AS file_format,
+  table_owner,
+  if(
+    table_type IN (
+      'EXTERNAL',
+      'MANAGED',
+      'MANAGED_SHALLOW_CLONE',
+      'EXTERNAL_SHALLOW_CLONE'
+    ),
+    lower(table_type),
+    NULL
+  ) AS databricks_table_type
+FROM `system`.`information_schema`.`tables`
+WHERE table_catalog = 'workspace' 
+  AND table_schema = 'default'
+
+  
+[0m16:00:37.713991 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:00:38.832485 [debug] [ThreadPool]: Databricks adapter: Connection(session-id=01f0c3a0-7539-1006-be7f-e19b65d0aa00) - Created
+[0m16:00:39.613618 [debug] [ThreadPool]: SQL status: OK in 1.900 seconds
+[0m16:00:39.627146 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f0c3a0-7539-1006-be7f-e19b65d0aa00, command-id=01f0c3a0-7569-1491-ac4b-ec3eb7c4e2b7) - Closing
+[0m16:00:39.628154 [debug] [ThreadPool]: On list_workspace_default: Close
+[0m16:00:39.628686 [debug] [ThreadPool]: Databricks adapter: Connection(session-id=01f0c3a0-7539-1006-be7f-e19b65d0aa00) - Closing
+[0m16:00:39.921504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DD251D0F0>]}
+[0m16:00:39.932855 [debug] [Thread-3 (]: Began running node model.my_dbt_project.my_first_dbt_model
+[0m16:00:39.934581 [info ] [Thread-3 (]: 1 of 5 START sql table model default.my_first_dbt_model ........................ [RUN]
+[0m16:00:39.936974 [debug] [Thread-3 (]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=model.my_dbt_project.my_first_dbt_model) - Creating connection
+[0m16:00:39.938210 [debug] [Thread-3 (]: Acquiring new databricks connection 'model.my_dbt_project.my_first_dbt_model'
+[0m16:00:39.939404 [debug] [Thread-3 (]: Began compiling node model.my_dbt_project.my_first_dbt_model
+[0m16:00:39.959272 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_dbt_project.my_first_dbt_model"
+[0m16:00:39.960761 [debug] [Thread-3 (]: Began executing node model.my_dbt_project.my_first_dbt_model
+[0m16:00:39.991969 [debug] [Thread-3 (]: MATERIALIZING TABLE
+[0m16:00:39.992952 [warn ] [Thread-3 (]: [[33mWARNING[0m]: Use revamped materializations based on separating create and insert.  This allows more performant column comments, as well as new column features.
+You may opt into the new behavior sooner by setting `flags.use_materialization_v2` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m16:00:39.994357 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DD2498870>]}
+[0m16:00:40.069488 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_dbt_project.my_first_dbt_model"
+[0m16:00:40.070969 [debug] [Thread-3 (]: Using databricks connection "model.my_dbt_project.my_first_dbt_model"
+[0m16:00:40.071773 [debug] [Thread-3 (]: On model.my_dbt_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.10.8", "databricks_sql_connector_version": "4.2.0", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.my_first_dbt_model"} */
+
+  
+    
+        create or replace table `workspace`.`default`.`my_first_dbt_model`
+      
+      
+  using delta
+      
+      
+      
+      
+      
+      
+      
+      as
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select 2 as id
+
+)
+
+select *
+from source_data
+  
+[0m16:00:40.072430 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:00:41.198258 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-76a2-19b6-9c1f-186e48f63bd9) - Created
+[0m16:00:43.628622 [debug] [Thread-3 (]: SQL status: OK in 3.560 seconds
+[0m16:00:43.631552 [debug] [Thread-3 (]: Databricks adapter: Cursor(session-id=01f0c3a0-76a2-19b6-9c1f-186e48f63bd9, command-id=01f0c3a0-76ce-195d-b320-a6b784a3366f) - Closing
+[0m16:00:43.658690 [debug] [Thread-3 (]: Applying tags to relation None
+[0m16:00:43.685680 [debug] [Thread-3 (]: On model.my_dbt_project.my_first_dbt_model: Close
+[0m16:00:43.686379 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-76a2-19b6-9c1f-186e48f63bd9) - Closing
+[0m16:00:43.985308 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DD24AF050>]}
+[0m16:00:43.987390 [info ] [Thread-3 (]: 1 of 5 OK created sql table model default.my_first_dbt_model ................... [[32mOK[0m in 4.04s]
+[0m16:00:43.990256 [debug] [Thread-3 (]: Finished running node model.my_dbt_project.my_first_dbt_model
+[0m16:00:43.992901 [debug] [Thread-3 (]: Began running node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m16:00:43.994260 [info ] [Thread-3 (]: 2 of 5 START test not_null_my_first_dbt_model_id ............................... [RUN]
+[0m16:00:43.996627 [debug] [Thread-3 (]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710) - Creating connection
+[0m16:00:43.998181 [debug] [Thread-3 (]: Acquiring new databricks connection 'test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710'
+[0m16:00:43.999507 [debug] [Thread-3 (]: Began compiling node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m16:00:44.030103 [debug] [Thread-3 (]: Writing injected SQL for node "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m16:00:44.031855 [debug] [Thread-3 (]: Began executing node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m16:00:44.061530 [debug] [Thread-3 (]: Writing runtime sql for node "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m16:00:44.062914 [debug] [Thread-3 (]: Using databricks connection "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m16:00:44.063619 [debug] [Thread-3 (]: On test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.10.8", "databricks_sql_connector_version": "4.2.0", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from `workspace`.`default`.`my_first_dbt_model`
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m16:00:44.064243 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:00:45.156737 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-78ff-143d-bdb7-d5d3fa617968) - Created
+[0m16:00:45.907710 [debug] [Thread-3 (]: SQL status: OK in 1.840 seconds
+[0m16:00:45.914106 [debug] [Thread-3 (]: Databricks adapter: Cursor(session-id=01f0c3a0-78ff-143d-bdb7-d5d3fa617968, command-id=01f0c3a0-792a-1da6-83fc-8d3d19602995) - Closing
+[0m16:00:45.920833 [debug] [Thread-3 (]: On test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710: Close
+[0m16:00:45.922190 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-78ff-143d-bdb7-d5d3fa617968) - Closing
+[0m16:00:46.237005 [info ] [Thread-3 (]: 2 of 5 PASS not_null_my_first_dbt_model_id ..................................... [[32mPASS[0m in 2.24s]
+[0m16:00:46.239947 [debug] [Thread-3 (]: Finished running node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m16:00:46.241276 [debug] [Thread-3 (]: Began running node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m16:00:46.242832 [info ] [Thread-3 (]: 3 of 5 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m16:00:46.245179 [debug] [Thread-3 (]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321) - Creating connection
+[0m16:00:46.246749 [debug] [Thread-3 (]: Acquiring new databricks connection 'test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321'
+[0m16:00:46.248009 [debug] [Thread-3 (]: Began compiling node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m16:00:46.263906 [debug] [Thread-3 (]: Writing injected SQL for node "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m16:00:46.265594 [debug] [Thread-3 (]: Began executing node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m16:00:46.272741 [debug] [Thread-3 (]: Writing runtime sql for node "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m16:00:46.274615 [debug] [Thread-3 (]: Using databricks connection "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m16:00:46.275578 [debug] [Thread-3 (]: On test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.10.8", "databricks_sql_connector_version": "4.2.0", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from `workspace`.`default`.`my_first_dbt_model`
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m16:00:46.277718 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:00:47.333257 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-7a4c-170c-ac35-69a955c75085) - Created
+[0m16:00:48.402645 [debug] [Thread-3 (]: SQL status: OK in 2.120 seconds
+[0m16:00:48.408622 [debug] [Thread-3 (]: Databricks adapter: Cursor(session-id=01f0c3a0-7a4c-170c-ac35-69a955c75085, command-id=01f0c3a0-7a76-19c2-b35a-e53e80830bf6) - Closing
+[0m16:00:48.410648 [debug] [Thread-3 (]: On test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321: Close
+[0m16:00:48.411941 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-7a4c-170c-ac35-69a955c75085) - Closing
+[0m16:00:48.705584 [info ] [Thread-3 (]: 3 of 5 PASS unique_my_first_dbt_model_id ....................................... [[32mPASS[0m in 2.46s]
+[0m16:00:48.708463 [debug] [Thread-3 (]: Finished running node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m16:00:48.710580 [debug] [Thread-3 (]: Began running node model.my_dbt_project.my_second_dbt_model
+[0m16:00:48.712317 [info ] [Thread-3 (]: 4 of 5 START sql view model default.my_second_dbt_model ........................ [RUN]
+[0m16:00:48.714653 [debug] [Thread-3 (]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=model.my_dbt_project.my_second_dbt_model) - Creating connection
+[0m16:00:48.716236 [debug] [Thread-3 (]: Acquiring new databricks connection 'model.my_dbt_project.my_second_dbt_model'
+[0m16:00:48.717600 [debug] [Thread-3 (]: Began compiling node model.my_dbt_project.my_second_dbt_model
+[0m16:00:48.726387 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_dbt_project.my_second_dbt_model"
+[0m16:00:48.728976 [debug] [Thread-3 (]: Began executing node model.my_dbt_project.my_second_dbt_model
+[0m16:00:48.762837 [debug] [Thread-3 (]: MATERIALIZING VIEW
+[0m16:00:48.789205 [debug] [Thread-3 (]: Creating view `workspace`.`default`.`my_second_dbt_model`
+[0m16:00:48.790631 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_dbt_project.my_second_dbt_model"
+[0m16:00:48.791820 [debug] [Thread-3 (]: Using databricks connection "model.my_dbt_project.my_second_dbt_model"
+[0m16:00:48.792940 [debug] [Thread-3 (]: On model.my_dbt_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.10.8", "databricks_sql_connector_version": "4.2.0", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.my_second_dbt_model"} */
+
+  
+  
+  
+  create or replace view `workspace`.`default`.`my_second_dbt_model`
+  
+  as (
+    -- Use the `ref` function to select from other models
+
+select id
+from `workspace`.`default`.`my_first_dbt_model`
+union all
+select 1 as id
+  )
+
+[0m16:00:48.793833 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:00:49.859814 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-7bcd-1627-9e17-ea352a921ef1) - Created
+[0m16:00:50.619398 [debug] [Thread-3 (]: SQL status: OK in 1.830 seconds
+[0m16:00:50.622333 [debug] [Thread-3 (]: Databricks adapter: Cursor(session-id=01f0c3a0-7bcd-1627-9e17-ea352a921ef1, command-id=01f0c3a0-7bf8-1470-9acf-64e708d41260) - Closing
+[0m16:00:50.624610 [debug] [Thread-3 (]: Applying tags to relation None
+[0m16:00:50.626923 [debug] [Thread-3 (]: On model.my_dbt_project.my_second_dbt_model: Close
+[0m16:00:50.628186 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-7bcd-1627-9e17-ea352a921ef1) - Closing
+[0m16:00:50.925652 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9122af43-2008-45c3-8228-379b2551ff52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DC72545D0>]}
+[0m16:00:50.927703 [info ] [Thread-3 (]: 4 of 5 OK created sql view model default.my_second_dbt_model ................... [[32mOK[0m in 2.21s]
+[0m16:00:50.930484 [debug] [Thread-3 (]: Finished running node model.my_dbt_project.my_second_dbt_model
+[0m16:00:50.932786 [debug] [Thread-3 (]: Began running node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m16:00:50.934361 [info ] [Thread-3 (]: 5 of 5 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m16:00:50.936683 [debug] [Thread-3 (]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778) - Creating connection
+[0m16:00:50.938051 [debug] [Thread-3 (]: Acquiring new databricks connection 'test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778'
+[0m16:00:50.939271 [debug] [Thread-3 (]: Began compiling node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m16:00:50.952253 [debug] [Thread-3 (]: Writing injected SQL for node "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m16:00:50.956091 [debug] [Thread-3 (]: Began executing node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m16:00:50.967873 [debug] [Thread-3 (]: Writing runtime sql for node "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m16:00:50.969574 [debug] [Thread-3 (]: Using databricks connection "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m16:00:50.970446 [debug] [Thread-3 (]: On test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.10.8", "databricks_sql_connector_version": "4.2.0", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from `workspace`.`default`.`my_second_dbt_model`
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m16:00:50.971132 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:00:52.065413 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-7d1d-1e81-ac7c-c85ac028ed42) - Created
+[0m16:00:52.867966 [debug] [Thread-3 (]: SQL status: OK in 1.900 seconds
+[0m16:00:52.874343 [debug] [Thread-3 (]: Databricks adapter: Cursor(session-id=01f0c3a0-7d1d-1e81-ac7c-c85ac028ed42, command-id=01f0c3a0-7d48-19b9-95f6-cbeb5e5ab737) - Closing
+[0m16:00:52.876534 [debug] [Thread-3 (]: On test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m16:00:52.877861 [debug] [Thread-3 (]: Databricks adapter: Connection(session-id=01f0c3a0-7d1d-1e81-ac7c-c85ac028ed42) - Closing
+[0m16:00:53.174552 [info ] [Thread-3 (]: 5 of 5 PASS not_null_my_second_dbt_model_id .................................... [[32mPASS[0m in 2.24s]
+[0m16:00:53.177456 [debug] [Thread-3 (]: Finished running node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m16:00:53.181062 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(session-id=None, name=master) - Creating connection
+[0m16:00:53.182141 [debug] [MainThread]: Acquiring new databricks connection 'master'
+[0m16:00:53.183478 [info ] [MainThread]: 
+[0m16:00:53.185310 [info ] [MainThread]: Finished running 1 table model, 3 data tests, 1 view model in 0 hours 0 minutes and 17.72 seconds (17.72s).
+[0m16:00:53.192334 [debug] [MainThread]: Command end result
+[0m16:00:53.257481 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\manifest.json
+[0m16:00:53.261917 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\semantic_manifest.json
+[0m16:00:53.271116 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\user\Downloads\DBT\my_dbt_project\target\run_results.json
+[0m16:00:53.271699 [info ] [MainThread]: 
+[0m16:00:53.272593 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:00:53.273373 [info ] [MainThread]: 
+[0m16:00:53.274198 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m16:00:53.276570 [debug] [MainThread]: Command `dbt build` succeeded at 16:00:53.276315 after 24.23 seconds
+[0m16:00:53.277267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023E129DF6B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DD250AB10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023DD24DD5D0>]}
+[0m16:00:53.277873 [debug] [MainThread]: Flushing usage events
+[0m16:00:54.655666 [debug] [MainThread]: An error was encountered while trying to flush usage events
