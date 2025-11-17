@@ -1,0 +1,7 @@
+# Optional requirements for running dbt in CI
+# Add adapters you need (e.g. dbt-databricks) only if your CI will run dbt.
+# dbt-core is not required to run the artifact-based test-coverage check, but
+# include it if you plan to run `dbt build` in CI.
+
+dbt-core==1.10.13
+# dbt-databricks==1.11.0  # uncomment if running full dbt with databricks adapter

@@ -1,0 +1,52 @@
+name: dbt-build
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  dbt-build:
+    name: Run dbt build (full CI)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Create dbt profiles.yml from secret
+        env:
+          DBT_PROFILES_YML: ${{ secrets.DBT_PROFILES_YML }}
+        run: |
+          mkdir -p $HOME/.dbt
+          if [ -z "$DBT_PROFILES_YML" ]; then
+            echo "Secret DBT_PROFILES_YML is empty. Set it in repository secrets."; exit 1
+          fi
+          echo "$DBT_PROFILES_YML" > $HOME/.dbt/profiles.yml
+
+      - name: (optional) Print profiles for debug
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          echo "---- profiles.yml ----"
+          sed -n '1,200p' $HOME/.dbt/profiles.yml || true
+
+      - name: dbt deps
+        run: dbt deps --profiles-dir $HOME/.dbt
+
+      - name: dbt build
+        run: dbt build --profiles-dir $HOME/.dbt
+
+      - name: Upload dbt target artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-target
+          path: target/**

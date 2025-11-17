@@ -1,0 +1,36 @@
+name: test-coverage
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  test-coverage:
+    name: Test coverage (uses repository dbt artifacts)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies (if present)
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Ensure dbt artifacts are present
+        run: |
+          if [ ! -f target/manifest.json ] || [ ! -f target/run_results.json ]; then
+            echo "Missing dbt artifacts (target/manifest.json or target/run_results.json)."
+            echo "If you want CI to run dbt itself, add a workflow that configures project credentials and runs `dbt build`."
+            exit 1
+          fi
+
+      - name: Run test-coverage script
+        run: |
+          python test-coverage.py
