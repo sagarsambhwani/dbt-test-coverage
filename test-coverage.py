@@ -1,3 +1,5 @@
+# Script: test-coverage.py
+# Description: This script analyzes dbt artifacts (manifest.json and run_results.json)
 import json
 
 # 1. Load dbt artifacts
