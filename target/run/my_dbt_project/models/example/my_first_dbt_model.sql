@@ -3,9 +3,7 @@
     
         create or replace table `workspace`.`default`.`my_first_dbt_model`
       
-      
-    using delta
-  
+      using delta
       
       
       
