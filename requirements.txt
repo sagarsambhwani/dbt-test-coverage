@@ -4,4 +4,4 @@
 # include it if you plan to run `dbt build` in CI.
 
 dbt-core==1.10.13
-# dbt-databricks==1.11.0  # uncomment if running full dbt with databricks adapter
+dbt-databricks==1.11.0  # uncomment if running full dbt with databricks adapter
