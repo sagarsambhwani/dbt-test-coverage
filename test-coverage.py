@@ -70,7 +70,7 @@ print("\n" + "="*80)
 untested_models = [model for model, tests in model_tests.items() if not tests]
 
 if untested_models or failed_tests:
-    print("\n⚠️  SCRIPT FAILED - Issues detected:")
+    print("\n  SCRIPT FAILED - Issues detected:")
     if untested_models:
         print(f"\n  • Untested Models ({len(untested_models)}):")
         for model in untested_models:
