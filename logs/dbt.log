@@ -2671,3 +2671,356 @@ parsing.
 [0m15:43:39.945530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015D6D50F0D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015D6D50C8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015D5FEF9B70>]}
 [0m15:43:39.946425 [debug] [MainThread]: Flushing usage events
 [0m15:43:41.315779 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:53:59.689334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F98D81ACF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F98EA97D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F98EA979D0>]}
+
+
+============================== 15:53:59.696233 | f9c3d3ab-c71e-49ac-9d09-ecfc071336b7 ==============================
+[0m15:53:59.696233 [info ] [MainThread]: Running with dbt=1.10.8
+[0m15:53:59.697331 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\user\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\Users\\user\\Downloads\\DBT\\my_dbt_project\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt build --profiles-dir C:\\Users\\user\\.dbt', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:54:00.779829 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m15:54:00.780649 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m15:54:00.781394 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m15:54:01.881667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f9c3d3ab-c71e-49ac-9d09-ecfc071336b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F98DEB3CE0>]}
+[0m15:54:01.974768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f9c3d3ab-c71e-49ac-9d09-ecfc071336b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F990970490>]}
+[0m15:54:01.975746 [info ] [MainThread]: Registered adapter: databricks=1.9.0
+[0m15:54:02.572481 [debug] [MainThread]: checksum: 265d66e81f90af29a7a28579c9b54d938c94f4a57c57be5f853267ae509b5fcb, vars: {}, profile: , target: , version: 1.10.8
+[0m15:54:02.855549 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:54:02.856628 [debug] [MainThread]: Partial parsing: updated file: my_dbt_project://models\example\schema.yml
+[0m15:54:03.439139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f9c3d3ab-c71e-49ac-9d09-ecfc071336b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F99B64FB50>]}
+[0m15:54:03.551911 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\manifest.json
+[0m15:54:03.555593 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\semantic_manifest.json
+[0m15:54:03.614422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f9c3d3ab-c71e-49ac-9d09-ecfc071336b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F99C016F30>]}
+[0m15:54:03.615129 [info ] [MainThread]: Found 2 models, 3 data tests, 609 macros
+[0m15:54:03.618947 [info ] [MainThread]: 
+[0m15:54:03.619721 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:54:03.620405 [info ] [MainThread]: 
+[0m15:54:03.621673 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=0s, acquire-count=0, language=None, thread-identifier=(15508, 7588), compute-name=) - Creating connection
+[0m15:54:03.622383 [debug] [MainThread]: Acquiring new databricks connection 'master'
+[0m15:54:03.623013 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=7.152557373046875e-06s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Acquired connection on thread (15508, 7588), using default compute resource
+[0m15:54:03.635015 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171349564816, session-id=None, name=list_workspace, idle-time=0s, acquire-count=0, language=None, thread-identifier=(15508, 6360), compute-name=) - Creating connection
+[0m15:54:03.635777 [debug] [ThreadPool]: Acquiring new databricks connection 'list_workspace'
+[0m15:54:03.636338 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171349564816, session-id=None, name=list_workspace, idle-time=4.76837158203125e-06s, acquire-count=1, language=None, thread-identifier=(15508, 6360), compute-name=) - Acquired connection on thread (15508, 6360), using default compute resource
+[0m15:54:03.636920 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171349564816, session-id=None, name=list_workspace, idle-time=0.000591278076171875s, acquire-count=1, language=None, thread-identifier=(15508, 6360), compute-name=) - Checking idleness
+[0m15:54:03.637478 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171349564816, session-id=None, name=list_workspace, idle-time=0.0011470317840576172s, acquire-count=1, language=None, thread-identifier=(15508, 6360), compute-name=) - Retrieving connection
+[0m15:54:03.637971 [debug] [ThreadPool]: Using databricks connection "list_workspace"
+[0m15:54:03.638531 [debug] [ThreadPool]: On list_workspace: GetSchemas(database=workspace, schema=None)
+[0m15:54:03.638964 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:54:05.138577 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171349564816, session-id=01f0c39f-8a7a-1796-b50c-ada1cd99c4ec, name=list_workspace, idle-time=1.2636184692382812e-05s, acquire-count=1, language=None, thread-identifier=(15508, 6360), compute-name=) - Connection created
+[0m15:54:05.139359 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f0c39f-8a7a-1796-b50c-ada1cd99c4ec, command-id=Unknown) - Created cursor
+[0m15:55:07.064813 [debug] [ThreadPool]: SQL status: OK in 63.430 seconds
+[0m15:55:07.068708 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f0c39f-8a7a-1796-b50c-ada1cd99c4ec, command-id=01f0c39f-aeae-186c-9947-69c92df022d6) - Closing cursor
+[0m15:55:07.070003 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171349564816, session-id=01f0c39f-8a7a-1796-b50c-ada1cd99c4ec, name=list_workspace, idle-time=1.1444091796875e-05s, acquire-count=0, language=None, thread-identifier=(15508, 6360), compute-name=) - Released connection
+[0m15:55:07.074424 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=None, name=list_workspace_default, idle-time=0s, acquire-count=0, language=None, thread-identifier=(15508, 14276), compute-name=) - Creating connection
+[0m15:55:07.075774 [debug] [ThreadPool]: Acquiring new databricks connection 'list_workspace_default'
+[0m15:55:07.076922 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=None, name=list_workspace_default, idle-time=8.344650268554688e-06s, acquire-count=1, language=None, thread-identifier=(15508, 14276), compute-name=) - Acquired connection on thread (15508, 14276), using default compute resource
+[0m15:55:07.100436 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=None, name=list_workspace_default, idle-time=0.0236208438873291s, acquire-count=1, language=None, thread-identifier=(15508, 14276), compute-name=) - Checking idleness
+[0m15:55:07.101043 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=None, name=list_workspace_default, idle-time=0.02427816390991211s, acquire-count=1, language=None, thread-identifier=(15508, 14276), compute-name=) - Retrieving connection
+[0m15:55:07.101529 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=None, name=list_workspace_default, idle-time=0.02476811408996582s, acquire-count=1, language=None, thread-identifier=(15508, 14276), compute-name=) - Checking idleness
+[0m15:55:07.101997 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=None, name=list_workspace_default, idle-time=0.025238037109375s, acquire-count=1, language=None, thread-identifier=(15508, 14276), compute-name=) - Retrieving connection
+[0m15:55:07.102440 [debug] [ThreadPool]: Spark adapter: NotImplemented: add_begin_query
+[0m15:55:07.102840 [debug] [ThreadPool]: Using databricks connection "list_workspace_default"
+[0m15:55:07.103313 [debug] [ThreadPool]: On list_workspace_default: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.9.0", "databricks_sql_connector_version": "3.7.4", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_workspace_default"} */
+select
+      table_name,
+      if(table_type in ('EXTERNAL', 'MANAGED', 'MANAGED_SHALLOW_CLONE', 'EXTERNAL_SHALLOW_CLONE'), 'table', lower(table_type)) as table_type,
+      lower(data_source_format) as file_format,
+      table_owner
+    from `system`.`information_schema`.`tables`
+    where table_catalog = 'workspace'
+      and table_schema = 'default'
+    
+  
+[0m15:55:07.103770 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:55:08.216919 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=01f0c39f-b027-1a75-b9b4-cc7d42ed3ae6, name=list_workspace_default, idle-time=1.0251998901367188e-05s, acquire-count=1, language=None, thread-identifier=(15508, 14276), compute-name=) - Connection created
+[0m15:55:08.218213 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f0c39f-b027-1a75-b9b4-cc7d42ed3ae6, command-id=Unknown) - Created cursor
+[0m15:55:11.301443 [debug] [ThreadPool]: SQL status: OK in 4.200 seconds
+[0m15:55:11.319005 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f0c39f-b027-1a75-b9b4-cc7d42ed3ae6, command-id=01f0c39f-b055-151f-bf5a-d4617d82dc20) - Closing cursor
+[0m15:55:11.320889 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=2171565060048, session-id=01f0c39f-b027-1a75-b9b4-cc7d42ed3ae6, name=list_workspace_default, idle-time=9.059906005859375e-06s, acquire-count=0, language=None, thread-identifier=(15508, 14276), compute-name=) - Released connection
+[0m15:55:11.323944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f9c3d3ab-c71e-49ac-9d09-ecfc071336b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F99BFF10F0>]}
+[0m15:55:11.324760 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=67.70183253288269s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Checking idleness
+[0m15:55:11.325312 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=67.70239496231079s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Retrieving connection
+[0m15:55:11.325850 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=67.70293521881104s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Checking idleness
+[0m15:55:11.326403 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=67.70349025726318s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Retrieving connection
+[0m15:55:11.326893 [debug] [MainThread]: Spark adapter: NotImplemented: add_begin_query
+[0m15:55:11.327401 [debug] [MainThread]: Spark adapter: NotImplemented: commit
+[0m15:55:11.328144 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=3.814697265625e-06s, acquire-count=0, language=None, thread-identifier=(15508, 7588), compute-name=) - Released connection
+[0m15:55:11.334541 [debug] [Thread-1 (]: Began running node model.my_dbt_project.my_first_dbt_model
+[0m15:55:11.335432 [info ] [Thread-1 (]: 1 of 5 START sql table model default.my_first_dbt_model ........................ [RUN]
+[0m15:55:11.336702 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=None, name=model.my_dbt_project.my_first_dbt_model, idle-time=0s, acquire-count=0, language=None, thread-identifier=(15508, 4508), compute-name=) - Creating connection
+[0m15:55:11.337364 [debug] [Thread-1 (]: Acquiring new databricks connection 'model.my_dbt_project.my_first_dbt_model'
+[0m15:55:11.337992 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=None, name=model.my_dbt_project.my_first_dbt_model, idle-time=4.76837158203125e-06s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Acquired connection on thread (15508, 4508), using default compute resource for model '`workspace`.`default`.`my_first_dbt_model`'
+[0m15:55:11.338595 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.my_first_dbt_model
+[0m15:55:11.348581 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.my_first_dbt_model"
+[0m15:55:11.349904 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.my_first_dbt_model
+[0m15:55:11.370931 [debug] [Thread-1 (]: MATERIALIZING TABLE
+[0m15:55:11.438693 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.my_first_dbt_model"
+[0m15:55:11.440275 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=None, name=model.my_dbt_project.my_first_dbt_model, idle-time=0.10220861434936523s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:11.440944 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=None, name=model.my_dbt_project.my_first_dbt_model, idle-time=0.10298728942871094s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Retrieving connection
+[0m15:55:11.441564 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=None, name=model.my_dbt_project.my_first_dbt_model, idle-time=0.10359382629394531s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:11.442177 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=None, name=model.my_dbt_project.my_first_dbt_model, idle-time=0.10420966148376465s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Retrieving connection
+[0m15:55:11.442759 [debug] [Thread-1 (]: Spark adapter: NotImplemented: add_begin_query
+[0m15:55:11.443195 [debug] [Thread-1 (]: Using databricks connection "model.my_dbt_project.my_first_dbt_model"
+[0m15:55:11.443831 [debug] [Thread-1 (]: On model.my_dbt_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.9.0", "databricks_sql_connector_version": "3.7.4", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.my_first_dbt_model"} */
+
+  
+    
+        create or replace table `workspace`.`default`.`my_first_dbt_model`
+      
+      using delta
+      
+      
+      
+      
+      
+      
+      
+      as
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select 2 as id
+
+)
+
+select *
+from source_data
+  
+[0m15:55:11.444446 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:55:12.540423 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_first_dbt_model, idle-time=8.106231689453125e-06s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Connection created
+[0m15:55:12.541906 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=Unknown) - Created cursor
+[0m15:55:21.404458 [debug] [Thread-1 (]: SQL status: OK in 9.960 seconds
+[0m15:55:21.407435 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=01f0c39f-b2eb-18ad-a2fb-8ffcd1c85725) - Closing cursor
+[0m15:55:21.784133 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_first_dbt_model, idle-time=4.291534423828125e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:21.784999 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_first_dbt_model, idle-time=2.6226043701171875e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:21.787924 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f9c3d3ab-c71e-49ac-9d09-ecfc071336b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9DC4DCEF0>]}
+[0m15:55:21.788834 [info ] [Thread-1 (]: 1 of 5 OK created sql table model default.my_first_dbt_model ................... [[32mOK[0m in 10.45s]
+[0m15:55:21.790283 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.my_first_dbt_model
+[0m15:55:21.791584 [debug] [Thread-1 (]: Began running node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m15:55:21.792265 [info ] [Thread-1 (]: 2 of 5 START test not_null_my_first_dbt_model_id ............................... [RUN]
+[0m15:55:21.793354 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_first_dbt_model, idle-time=0.008357763290405273s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:21.793852 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.my_first_dbt_model, now test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710)
+[0m15:55:21.794456 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, idle-time=0.009477376937866211s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Reusing connection previously named model.my_dbt_project.my_first_dbt_model
+[0m15:55:21.795098 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, idle-time=0.010106086730957031s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Acquired connection on thread (15508, 4508), using default compute resource for model 'None'
+[0m15:55:21.795683 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m15:55:21.818103 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m15:55:21.819577 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m15:55:21.847587 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m15:55:21.849659 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, idle-time=0.06455254554748535s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:21.850378 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, idle-time=0.06539058685302734s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Retrieving connection
+[0m15:55:21.850854 [debug] [Thread-1 (]: Using databricks connection "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m15:55:21.851476 [debug] [Thread-1 (]: On test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.9.0", "databricks_sql_connector_version": "3.7.4", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from `workspace`.`default`.`my_first_dbt_model`
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:55:21.852130 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=Unknown) - Created cursor
+[0m15:55:23.205976 [debug] [Thread-1 (]: SQL status: OK in 1.350 seconds
+[0m15:55:23.209416 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=01f0c39f-b875-102b-a488-bcebea3ccdf0) - Closing cursor
+[0m15:55:23.212991 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, idle-time=4.5299530029296875e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:23.213815 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, idle-time=2.6226043701171875e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:23.214644 [info ] [Thread-1 (]: 2 of 5 PASS not_null_my_first_dbt_model_id ..................................... [[32mPASS[0m in 1.42s]
+[0m15:55:23.216325 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m15:55:23.216994 [debug] [Thread-1 (]: Began running node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m15:55:23.217740 [info ] [Thread-1 (]: 3 of 5 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m15:55:23.218832 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, idle-time=0.005009651184082031s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:23.219356 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710, now test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321)
+[0m15:55:23.220006 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, idle-time=0.006196737289428711s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Reusing connection previously named test.my_dbt_project.not_null_my_first_dbt_model_id.5fb22c2710
+[0m15:55:23.220644 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, idle-time=0.006832599639892578s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Acquired connection on thread (15508, 4508), using default compute resource for model 'None'
+[0m15:55:23.221231 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m15:55:23.230444 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m15:55:23.231928 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m15:55:23.236783 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m15:55:23.238437 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, idle-time=0.02458786964416504s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:23.239181 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, idle-time=0.025355815887451172s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Retrieving connection
+[0m15:55:23.239699 [debug] [Thread-1 (]: Using databricks connection "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m15:55:23.240440 [debug] [Thread-1 (]: On test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.9.0", "databricks_sql_connector_version": "3.7.4", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from `workspace`.`default`.`my_first_dbt_model`
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:55:23.241253 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=Unknown) - Created cursor
+[0m15:55:24.557758 [debug] [Thread-1 (]: SQL status: OK in 1.320 seconds
+[0m15:55:24.563750 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=01f0c39f-b949-108c-8a26-f62162002967) - Closing cursor
+[0m15:55:24.565935 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, idle-time=6.67572021484375e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:24.567522 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, idle-time=5.245208740234375e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:24.569052 [info ] [Thread-1 (]: 3 of 5 PASS unique_my_first_dbt_model_id ....................................... [[32mPASS[0m in 1.35s]
+[0m15:55:24.571765 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m15:55:24.573843 [debug] [Thread-1 (]: Began running node model.my_dbt_project.my_second_dbt_model
+[0m15:55:24.575464 [info ] [Thread-1 (]: 4 of 5 START sql view model default.my_second_dbt_model ........................ [RUN]
+[0m15:55:24.577715 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, idle-time=0.010138988494873047s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:24.578821 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321, now model.my_dbt_project.my_second_dbt_model)
+[0m15:55:24.580345 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_second_dbt_model, idle-time=0.012754678726196289s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Reusing connection previously named test.my_dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m15:55:24.581796 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_second_dbt_model, idle-time=0.014219045639038086s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Acquired connection on thread (15508, 4508), using default compute resource for model '`workspace`.`default`.`my_second_dbt_model`'
+[0m15:55:24.583535 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.my_second_dbt_model
+[0m15:55:24.592247 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.my_second_dbt_model"
+[0m15:55:24.594212 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.my_second_dbt_model
+[0m15:55:24.628873 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.my_second_dbt_model"
+[0m15:55:24.630429 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_second_dbt_model, idle-time=0.06308770179748535s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:24.631109 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_second_dbt_model, idle-time=0.06381654739379883s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Retrieving connection
+[0m15:55:24.631574 [debug] [Thread-1 (]: Using databricks connection "model.my_dbt_project.my_second_dbt_model"
+[0m15:55:24.632187 [debug] [Thread-1 (]: On model.my_dbt_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.9.0", "databricks_sql_connector_version": "3.7.4", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.my_second_dbt_model"} */
+create or replace view `workspace`.`default`.`my_second_dbt_model`
+  
+  
+  
+  as
+    -- Use the `ref` function to select from other models
+
+select id
+from `workspace`.`default`.`my_first_dbt_model`
+union all
+select 1 as id
+
+[0m15:55:24.632830 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=Unknown) - Created cursor
+[0m15:55:25.635283 [debug] [Thread-1 (]: SQL status: OK in 1.000 seconds
+[0m15:55:25.638193 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=01f0c39f-ba1d-1a1c-9964-cda29908f47f) - Closing cursor
+[0m15:55:25.642198 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_second_dbt_model, idle-time=6.9141387939453125e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:25.643766 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_second_dbt_model, idle-time=5.0067901611328125e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:25.645065 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f9c3d3ab-c71e-49ac-9d09-ecfc071336b7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F99C0C4F50>]}
+[0m15:55:25.646856 [info ] [Thread-1 (]: 4 of 5 OK created sql view model default.my_second_dbt_model ................... [[32mOK[0m in 1.07s]
+[0m15:55:25.649584 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.my_second_dbt_model
+[0m15:55:25.651615 [debug] [Thread-1 (]: Began running node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m15:55:25.652993 [info ] [Thread-1 (]: 5 of 5 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m15:55:25.654755 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=model.my_dbt_project.my_second_dbt_model, idle-time=0.011188745498657227s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:25.655274 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.my_second_dbt_model, now test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778)
+[0m15:55:25.656154 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778, idle-time=0.012578725814819336s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Reusing connection previously named model.my_dbt_project.my_second_dbt_model
+[0m15:55:25.656845 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778, idle-time=0.013316631317138672s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Acquired connection on thread (15508, 4508), using default compute resource for model 'None'
+[0m15:55:25.657633 [debug] [Thread-1 (]: Began compiling node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m15:55:25.665218 [debug] [Thread-1 (]: Writing injected SQL for node "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m15:55:25.666686 [debug] [Thread-1 (]: Began executing node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m15:55:25.670959 [debug] [Thread-1 (]: Writing runtime sql for node "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m15:55:25.672496 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778, idle-time=0.028888463973999023s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Checking idleness
+[0m15:55:25.673192 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778, idle-time=0.029688358306884766s, acquire-count=1, language=sql, thread-identifier=(15508, 4508), compute-name=) - Retrieving connection
+[0m15:55:25.673671 [debug] [Thread-1 (]: Using databricks connection "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m15:55:25.674312 [debug] [Thread-1 (]: On test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.10.8", "dbt_databricks_version": "1.9.0", "databricks_sql_connector_version": "3.7.4", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from `workspace`.`default`.`my_second_dbt_model`
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:55:25.674984 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=Unknown) - Created cursor
+[0m15:55:26.680086 [debug] [Thread-1 (]: SQL status: OK in 1.000 seconds
+[0m15:55:26.685860 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, command-id=01f0c39f-babc-1976-ae8f-db33574cbcd7) - Closing cursor
+[0m15:55:26.687879 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778, idle-time=6.67572021484375e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:26.689480 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=2171568577136, session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8, name=test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778, idle-time=5.9604644775390625e-06s, acquire-count=0, language=sql, thread-identifier=(15508, 4508), compute-name=) - Released connection
+[0m15:55:26.691078 [info ] [Thread-1 (]: 5 of 5 PASS not_null_my_second_dbt_model_id .................................... [[32mPASS[0m in 1.04s]
+[0m15:55:26.693124 [debug] [Thread-1 (]: Finished running node test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m15:55:26.694990 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=15.366833448410034s, acquire-count=0, language=None, thread-identifier=(15508, 7588), compute-name=) - Checking idleness
+[0m15:55:26.695582 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=15.367446899414062s, acquire-count=0, language=None, thread-identifier=(15508, 7588), compute-name=) - Reusing connection previously named master
+[0m15:55:26.696109 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=15.367972612380981s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Acquired connection on thread (15508, 7588), using default compute resource
+[0m15:55:26.696656 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=15.368528604507446s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Checking idleness
+[0m15:55:26.697167 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=None, name=master, idle-time=15.369038820266724s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Retrieving connection
+[0m15:55:26.697640 [debug] [MainThread]: On master: ROLLBACK
+[0m15:55:26.698093 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:55:27.790877 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=01f0c39f-bbd1-1fa9-93f0-d124372238a4, name=master, idle-time=7.867813110351562e-06s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Connection created
+[0m15:55:27.792076 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m15:55:27.793168 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=01f0c39f-bbd1-1fa9-93f0-d124372238a4, name=master, idle-time=0.0023927688598632812s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Checking idleness
+[0m15:55:27.794248 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=01f0c39f-bbd1-1fa9-93f0-d124372238a4, name=master, idle-time=0.003477811813354492s, acquire-count=1, language=None, thread-identifier=(15508, 7588), compute-name=) - Retrieving connection
+[0m15:55:27.795241 [debug] [MainThread]: Spark adapter: NotImplemented: add_begin_query
+[0m15:55:27.796205 [debug] [MainThread]: Spark adapter: NotImplemented: commit
+[0m15:55:27.797260 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=2171568961392, session-id=01f0c39f-bbd1-1fa9-93f0-d124372238a4, name=master, idle-time=5.0067901611328125e-06s, acquire-count=0, language=None, thread-identifier=(15508, 7588), compute-name=) - Released connection
+[0m15:55:27.798438 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:55:27.799385 [debug] [MainThread]: On master: ROLLBACK
+[0m15:55:27.800346 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m15:55:27.801272 [debug] [MainThread]: On master: Close
+[0m15:55:27.802275 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f0c39f-bbd1-1fa9-93f0-d124372238a4) - Closing connection
+[0m15:55:28.088676 [debug] [MainThread]: Connection 'list_workspace' was properly closed.
+[0m15:55:28.089824 [debug] [MainThread]: On list_workspace: Close
+[0m15:55:28.090880 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f0c39f-8a7a-1796-b50c-ada1cd99c4ec) - Closing connection
+[0m15:55:28.373018 [debug] [MainThread]: Connection 'list_workspace_default' was properly closed.
+[0m15:55:28.373626 [debug] [MainThread]: On list_workspace_default: ROLLBACK
+[0m15:55:28.374143 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m15:55:28.374622 [debug] [MainThread]: On list_workspace_default: Close
+[0m15:55:28.375134 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f0c39f-b027-1a75-b9b4-cc7d42ed3ae6) - Closing connection
+[0m15:55:28.668118 [debug] [MainThread]: Connection 'test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778' was properly closed.
+[0m15:55:28.669267 [debug] [MainThread]: On test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778: ROLLBACK
+[0m15:55:28.670273 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m15:55:28.671218 [debug] [MainThread]: On test.my_dbt_project.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m15:55:28.672243 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f0c39f-b2ba-1b10-96f6-f448162e5bc8) - Closing connection
+[0m15:55:28.969469 [info ] [MainThread]: 
+[0m15:55:28.971163 [info ] [MainThread]: Finished running 1 table model, 3 data tests, 1 view model in 0 hours 1 minutes and 25.35 seconds (85.35s).
+[0m15:55:28.976574 [debug] [MainThread]: Command end result
+[0m15:55:29.037596 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\manifest.json
+[0m15:55:29.042791 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\user\Downloads\DBT\my_dbt_project\target\semantic_manifest.json
+[0m15:55:29.051848 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\user\Downloads\DBT\my_dbt_project\target\run_results.json
+[0m15:55:29.052396 [info ] [MainThread]: 
+[0m15:55:29.053297 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:55:29.054074 [info ] [MainThread]: 
+[0m15:55:29.054873 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m15:55:29.057165 [debug] [MainThread]: Command `dbt build` succeeded at 15:55:29.056716 after 89.54 seconds
+[0m15:55:29.057852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F99BECCEC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9DC4C9590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9DC4C8B90>]}
+[0m15:55:29.058432 [debug] [MainThread]: Flushing usage events
+[0m15:55:30.781537 [debug] [MainThread]: An error was encountered while trying to flush usage events
