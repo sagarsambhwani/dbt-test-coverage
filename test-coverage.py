@@ -48,8 +48,10 @@ for model, tests in model_tests.items():
         if result is None:
             not_executed_tests.append((model, test_id))
         else:
-            status = result.get('status')
-            if status == 'pass':
+            status = (result.get('status') or '').lower()
+            # dbt may emit different truthy status strings depending on adapter/version
+            pass_statuses = {"pass", "success", "ok"}
+            if status in pass_statuses:
                 passed_tests.append((model, test_id, status))
             else:
                 failed_tests.append((model, test_id, status))
