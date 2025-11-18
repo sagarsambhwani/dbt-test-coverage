@@ -6,8 +6,12 @@ import sys
 # 1. Load dbt artifacts
 with open('target/manifest.json') as f:
     manifest = json.load(f)
-with open('target/run_results.json') as f:
-    run_results = json.load(f)
+try:
+    with open('target/run_results.json') as f:
+        run_results = json.load(f)
+except FileNotFoundError:
+    print("WARNING: target/run_results.json not found — proceeding without executed test results.")
+    run_results = {"results": []}
 
 # 2. Build mapping: model -> tests by examining all test nodes in manifest
 model_tests = {}

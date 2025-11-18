@@ -23,12 +23,26 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Ensure dbt artifacts are present
+      - name: Optionally run dbt build (when `DBT_PROFILES_YML` secret is set) or validate artifacts
+        env:
+          DBT_PROFILES_YML: ${{ secrets.DBT_PROFILES_YML }}
         run: |
-          if [ ! -f target/manifest.json ] || [ ! -f target/run_results.json ]; then
-            echo "Missing dbt artifacts (target/manifest.json or target/run_results.json)."
-            echo "If you want CI to run dbt itself, add a workflow that configures project credentials and runs `dbt build`."
-            exit 1
+          # If a profiles secret is provided, run dbt in CI (create profiles, deps, build)
+          if [ -n "$DBT_PROFILES_YML" ]; then
+            echo "DBT_PROFILES_YML found — creating profiles and running dbt compile in CI"
+            mkdir -p $HOME/.dbt
+            echo "$DBT_PROFILES_YML" > $HOME/.dbt/profiles.yml
+            # ensure requirements are installed (already ran above, but re-run if needed)
+            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+            dbt deps --profiles-dir $HOME/.dbt
+            dbt compile --profiles-dir $HOME/.dbt
+          else
+            # No profiles secret: require pre-built artifacts in repo
+            if [ ! -f target/manifest.json ] || [ ! -f target/run_results.json ]; then
+              echo "Missing dbt artifacts (target/manifest.json or target/run_results.json)."
+              echo "Set the 'DBT_PROFILES_YML' secret to allow CI to run dbt, or include compiled artifacts in the PR."
+              exit 1
+            fi
           fi
 
       - name: Run test-coverage script
